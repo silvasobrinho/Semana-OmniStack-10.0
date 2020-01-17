@@ -37,8 +37,7 @@ function Main( { navigation } ){
     }, []);
 
     async function loadDevs(){
-        console.log("requisitando os devs pertos");
-        const {latitude, longitude }= currentRegion;
+        const {latitude, longitude } = currentRegion;
 
         const response = await api.get('/search',{
             params:{
@@ -104,7 +103,7 @@ function Main( { navigation } ){
             onChangeText={setTechs}
             />
 
-            <TouchableOpacity  onPres={()=>{ console.log("aaaqui")}} style={styles.loadButton}>
+            <TouchableOpacity  onPress={loadDevs} style={styles.loadButton}>
                 <MaterialIcons name="my-location" size={20} color="#FFF" />
             </TouchableOpacity>
         </View>
