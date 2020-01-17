@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+const cors = require('cors');
 
 const app = express();
 
@@ -10,6 +11,7 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-tmwnu.mongodb.net/o
     useCreateIndex: true,
 });
 //vai ser vailido para todas as rotas da aplicação
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 //Query params | usar no GET {Filtros, ordenação, Paginação}
