@@ -3,7 +3,7 @@ import { StatusBar, YellowBox } from'react-native';
 import Routes from './src/routes';
 
 YellowBox.ignoreWarnings([
-  'Unrecognized WebSocket'
+  "Unrecognized WebSocket"
 ]);
 
 export default function App() {

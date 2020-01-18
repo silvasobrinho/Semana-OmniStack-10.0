@@ -17,9 +17,9 @@ module.exports = {
         const { github_username, techs, latitude, longitude } = request.body;
         
         let dev = await Dev.findOne({ github_username });
-        console.log(dev);
+        
         if(!dev){
-            console.log('entrei')
+            
             const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
 
             apiResponse.data.name == null ? apiResponse.data.name = apiResponse.data.login : apiResponse.data.name;
@@ -45,7 +45,7 @@ module.exports = {
 
             const sendSocketMessageTo = findConnections( {latitude, longitude},  techsArray,);
 
-            sendMessage(sendSocketMessageTo, 'new-dev', dev);
+            sendMessage(sendSocketMessageTo, "new-dev", dev);
         }
 
     

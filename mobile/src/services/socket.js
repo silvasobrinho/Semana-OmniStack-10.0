@@ -1,12 +1,12 @@
 import socketio from 'socket.io-client';
 
-const socket = socketio('http://b9935e63.ngrok.io', {
+const socket = socketio('http://192.168.86.3:3333', {
     autoConnect: false
 });
 
 function subscribeToNewDevs(subscribeFunction){
-    console.log("aqui na subscription", subscribeFunction)
-    socket.on('new-dev', subscribeFunction)
+   
+    socket.on("new-dev", subscribeFunction);
 }
 
 function connect(latitude, longitude, techs){
